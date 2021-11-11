@@ -3,11 +3,13 @@
 
 namespace awe;
 
-
+//creating BookProduct class that inherits ShopProduct class
 class BookProduct extends ShopProduct
 {
+	// declaring variable
     private $numPages;
 
+    //constructor function
     public function __construct(
         string $id,
         string $title,
@@ -17,7 +19,7 @@ class BookProduct extends ShopProduct
         int $numPages
     )
     {
-
+    	//calling parent constructor
         parent::__construct(
             $id,
             $title,
@@ -28,8 +30,10 @@ class BookProduct extends ShopProduct
         $this->numPages = $numPages;
     }
 
+    //function to return number of pages
     public function getNumberOfPages()
     {
         return $this->numPages;
     }
 }
+?>

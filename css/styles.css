@@ -1,10 +1,14 @@
+body{
+    margin: 40px 15%;
+    width: 70%;
+}
 table.paleBlueRows {
     font-family: Verdana, Geneva, sans-serif;
     border: 1px solid #FFFFFF;
     text-align: center;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 70%;
+    width: 100%;
 }
 table.paleBlueRows td, table.paleBlueRows th {
     border: 1px solid #FFFFFF;
@@ -41,4 +45,25 @@ table.paleBlueRows tfoot {
 }
 table.paleBlueRows tfoot td {
     font-size: 14px;
+}
+
+input[type=text], select {
+  width: 30%;
+  padding: 5px 5px;
+  margin: 8px 10px 8px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 10%;
+  background-color: #0B6FA4;
+  color: white;
+  padding: 14px 20px;
+  margin-left: auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }

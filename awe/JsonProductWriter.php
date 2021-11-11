@@ -3,11 +3,13 @@
 
 namespace awe;
 
-
+//creating JsonProductWriter class that inherits ShopProductWriter class
 class JsonProductWriter extends ShopProductWriter
 {
+    //implementing abstract function write from ShopProducWriter
     public function write()
     {
+        //creating array and adding value using for each loop
         $json_str = '[';
         foreach ($this->products as $product) {
           $json_str .= $this->addEachProductAsJSON($product).',';
@@ -15,9 +17,12 @@ class JsonProductWriter extends ShopProductWriter
         $json_str = rtrim($json_str, ","); //remove final ',' from outputted json string
 
         $json_str .= "]";
+
+        //displaying array.
         echo $json_str;
     }
 
+    //function to add product to jason file
     private function addEachProductAsJSON($product){
         $json_product = [];
         $json_product['id'] = $product->getId();
@@ -34,7 +39,13 @@ class JsonProductWriter extends ShopProductWriter
             $json_product['playlength'] = $product->getPlayLength();
             $json_product['type'] = "cd";
         }
+        if($product instanceof GameProduct) { 
+            $json_product['totalPegi'] = $product->getTotalPegi();
+            $json_product['type'] = "game";
+        }  
 
+        //returning JASON representation of value 
         return json_encode($json_product);
     }
 }
+?>

@@ -3,11 +3,11 @@
 
 namespace awe;
 
-//creating CdProduct class that inherits ShopProduct class
-class CdProduct extends ShopProduct
+//creating GameProduct class that inherits ShopProduct class
+class GameProduct extends ShopProduct
 {
     // declaring variable
-    private $playLength;
+    private $totalPegi;
 
     //constructor function
     public function __construct(
@@ -16,9 +16,10 @@ class CdProduct extends ShopProduct
         string $firstName,
         string $mainName,
         float $price,
-        int $playLength
+        int $totalPegi
     )
     {
+
         //calling parent constructor
         parent::__construct(
             $id,
@@ -27,13 +28,13 @@ class CdProduct extends ShopProduct
             $mainName,
             $price
         );
-        $this->playLength = $playLength;
+        $this->totalPegi = $totalPegi;
     }
 
-    //function to return duration
-    public function getPlayLength()
+    //function to return Pegi
+    public function getTotalPegi()
     {
-        return $this->playLength;
+        return $this->totalPegi;
     }
 }
 ?>
